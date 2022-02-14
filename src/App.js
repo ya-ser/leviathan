@@ -1,20 +1,22 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 // styles
-import './App.css';
+import './App.css'
 
-// pages and components
-import Dashboard from './pages/dashboard/Dashboard';
-import Create from './pages/create/Create';
-import Login from './pages/login/Login';
-import Signup from './pages/signup/Signup';
-import Project from './pages/project/Project';
+// pages & components
+import Dashboard from './pages/dashboard/Dashboard'
+import Create from './pages/create/Create'
+import Login from './pages/login/Login'
+import Signup from './pages/signup/Signup'
+import Project from './pages/project/Project'
+import Navbar from './components/Navbar'
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <div className="container">
+          <Navbar />
           <Switch>
             <Route exact path="/">
               <Dashboard />
@@ -38,4 +40,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
