@@ -20,8 +20,9 @@
   }
   .navbar .logo img {
     margin-right: 10px;
-    filter: invert(50%);
-    width: 36px;
+    margin-left: 10px;
+    filter: invert(10%);
+    width: 65px;
     margin-top: -8px;
   }
   .navbar a {
