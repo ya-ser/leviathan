@@ -8,10 +8,37 @@ export default function Signup() {
   const [password, setPassword] = useState('')
   const [displayName, setDisplayName] = useState('')
   const [thumbnail, setThumbnail] = useState(null)
+  const [thumbnailError, setThumbnailError] = useState(null)
+
+  const handleFileChange = (e) => {
+    setThumbnail(null)
+    let selected = e.target.files[0]
+    console.log(selected)
+    // if file is not selected
+    if (!selected) {
+      setThumbnailError('Please choose a file')
+      return
+    }
+    // if file selected is not an image
+    if (!selected.type.includes('image')) {
+      setThumbnailError('Select an image file')
+      return
+    }
+    // if selected image is too large
+    if (selected.size > 5000000) {
+      setThumbnailError('File size too large. File size must be less than 5MB')
+      return
+    }
+
+    setThumbnailError(null)
+    setThumbnail(selected)
+    console.log('thumbnail updated');
+
+  }
   
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(email, password, displayName)
+    console.log(email, password, displayName, thumbnail)
   }
 
   return (
@@ -48,8 +75,10 @@ export default function Signup() {
         <span>Profile thumbnail:</span>
         <input 
           required
-          type="file" 
+          type="file"
+          onChange={handleFileChange}
         />
+        {thumbnailError && <div className="error">{thumbnailError}</div>}
       </label>
       <button className="btn">Sign up</button>
     </form>
