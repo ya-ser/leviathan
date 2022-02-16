@@ -5,7 +5,8 @@ import Select from 'react-select'
 import { useCollection } from '../../hooks/useCollection'
 import { timestamp } from '../../firebase/config'
 import {useAuthContext} from '../../hooks/useAuthContext'
-
+import { useFirestore } from '../../hooks/useFirestore'
+import { useHistory } from 'react-router-dom'
 
 const categories = [
   { value: 'development', label: 'Development' },
@@ -14,6 +15,8 @@ const categories = [
 
 
 export default function Create() {
+  const history = useHistory()
+  const { addDocument, response } = useFirestore('tasks') 
   const { documents } = useCollection('users')
   const [users, setUsers] = useState([])
   const {user} = useAuthContext()
@@ -35,7 +38,7 @@ export default function Create() {
     }
   }, [documents])
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setFormError(null)
 
@@ -72,7 +75,12 @@ export default function Create() {
       assignedUsersList
     }
 
-    console.log(task)
+    await addDocument(task)
+
+    if (!response.error) {
+      history.push('/') //redirect user to dashboard if no error
+    }
+    
   }
 
 
