@@ -28,7 +28,7 @@ export const useSignup = () => {
       // add display name to user
       await res.user.updateProfile({ displayName, photoURL: imgUrl })
 
-      // create firestore user document for every user that signs up, the id of the doc is the user id, then set the data on the doc
+      // create firestore user document for every user that signs up, the id of the doc is the user id, then set the data as the obj value on the doc
       await projectFirestore.collection('users').doc(res.user.uid).set({
         online: true,
         displayName,
