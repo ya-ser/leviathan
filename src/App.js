@@ -9,7 +9,7 @@ import Dashboard from './pages/dashboard/Dashboard'
 import Create from './pages/create/Create'
 import Login from './pages/login/Login'
 import Signup from './pages/signup/Signup'
-import Project from './pages/project/Project'
+import Task from './pages/task/Task'
 import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
 import OnlineUsers from './components/OnlineUsers'
@@ -33,9 +33,9 @@ function App() {
                 {!user && <Redirect to="/login" />}
                 {user && <Create />}
               </Route>
-              <Route path="/projects/:id">
+              <Route path="/tasks/:id">
                 {!user && <Redirect to="/login" />}
-                {user && <Project />}
+                {user && <Task />}
               </Route>
               <Route path="/login">
                 {!user && <Login />}
