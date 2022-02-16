@@ -3,6 +3,8 @@ import './Create.css'
 // able to do multi select
 import Select from 'react-select'
 import { useCollection } from '../../hooks/useCollection'
+import { timestamp } from '../../firebase/config'
+import {useAuthContext} from '../../hooks/useAuthContext'
 
 
 const categories = [
@@ -14,6 +16,7 @@ const categories = [
 export default function Create() {
   const { documents } = useCollection('users')
   const [users, setUsers] = useState([])
+  const {user} = useAuthContext()
 
   // form field values
   const [name, setName] = useState('')
@@ -22,7 +25,7 @@ export default function Create() {
   const [category, setCategory] = useState('')
   const [assignedUsers, setAssignedUsers] = useState([])
   const [formError, setFormError] = useState(null)
-  
+
   useEffect(() => {
     if (documents) {
       const options = documents.map(user => {
@@ -44,7 +47,32 @@ export default function Create() {
       setFormError('Please assign the task to at least 1 user')
       return
     }
-    console.log(name, details, dueDate, category.value, assignedUsers)
+
+    const createdBy ={
+      displayName: user.displayName,
+      photoURL: user.photoURL,
+      id: user.uid
+    }
+
+    const assignedUsersList = assignedUsers.map((u) => {
+      return {
+        displayName: u.value.displayName,
+        photoURL: u.value.photoURL,
+        id: u.value.id
+      }
+    })
+
+    const task = {
+      name,
+      details,
+      category: category.value,
+      dueDate: timestamp.fromDate(new Date(dueDate)),
+      commnets: [],
+      createdBy,
+      assignedUsersList
+    }
+
+    console.log(task)
   }
 
 
@@ -54,35 +82,35 @@ export default function Create() {
       <form onSubmit={handleSubmit}>
         <label>
           <span>Task name:</span>
-          <input 
-            required 
-            type="text" 
-            onChange={(e) => setName(e.target.value)} 
+          <input
+            required
+            type="text"
+            onChange={(e) => setName(e.target.value)}
             value={name}
           />
         </label>
         <label>
           <span>Task details:</span>
           <textarea
-            required 
-            type="text" 
-            onChange={(e) => setDetails(e.target.value)} 
+            required
+            type="text"
+            onChange={(e) => setDetails(e.target.value)}
             value={details}
           ></textarea>
         </label>
         <label>
           <span>Set due date:</span>
           <input
-            required 
-            type="date" 
-            onChange={(e) => setDueDate(e.target.value)} 
+            required
+            type="date"
+            onChange={(e) => setDueDate(e.target.value)}
             value={dueDate}
           />
         </label>
         <label>
           <span>Task category:</span>
-          <Select 
-            onChange={(option) => setCategory(option) }
+          <Select
+            onChange={(option) => setCategory(option)}
             options={categories}
           />
         </label>
@@ -98,7 +126,7 @@ export default function Create() {
         <button className='btn'>Add Task</button>
         {formError && <p className='error'>{formError}</p>}
       </form>
-    
+
     </div>
   )
 }
