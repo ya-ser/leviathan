@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './Create.css'
 import Select from 'react-select'
+import { useCollection } from '../../hooks/useCollection'
 
 
 const categories = [
@@ -10,17 +11,28 @@ const categories = [
 
 
 export default function Create() {
+  const { documents } = useCollection('users')
+  const [users, setUsers] = useState([])
+
+  // form field values
   const [name, setName] = useState('')
   const [details, setDetails] = useState('')
   const [dueDate, setDueDate] = useState('')
-  // category test
   const [category, setCategory] = useState('')
   const [assignedUsers, setAssignedUsers] = useState([])
-
+  
+  useEffect(() => {
+    if(documents) {
+      const options = documents.map(user => {
+        return { value: user, label: user.displayName }
+      })
+      setUsers(options)
+    }
+  }, [documents])
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(name, details, dueDate, category.value)
+    console.log(name, details, dueDate, category.value, assignedUsers)
   }
 
 
@@ -56,7 +68,6 @@ export default function Create() {
           />
         </label>
         <label>
-          // this is a category test
           <span>Task category:</span>
           <Select 
             onChange={(option) => setCategory(option) }
@@ -65,7 +76,11 @@ export default function Create() {
         </label>
         <label>
           <span>Assign to:</span>
-          {/* assignee select */}
+          <Select
+            onChange={(option) => setAssignedUsers(option)}
+            options={users}
+            isMulti
+          />
         </label>
 
         <button className='btn'>Add Task</button>
