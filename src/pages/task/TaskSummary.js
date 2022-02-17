@@ -2,7 +2,7 @@
 import Avatar from '../../components/Avatar'
 
 
-export default function ProjectSummary({ task }) {
+export default function TaskSummary({ task }) {
   return (
     <div>
       <div className="task-summary" >

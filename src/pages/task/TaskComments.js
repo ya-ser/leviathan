@@ -1,14 +1,15 @@
 import { useState } from "react"
 import { timestamp } from "../../firebase/config"
 import { useAuthContext } from "../../hooks/useAuthContext"
+import { useFirestore } from "../../hooks/useFirestore"
 
-
-export default function TaskComments() {
-  const [newComment, setNewComment] = useState('')
+export default function TaskComments({ task }) {
   const { user } = useAuthContext()
+  const { updateDocument, response } = useFirestore('tasks')
+  const [newComment, setNewComment] = useState('')
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     const commentToAdd = {
       displayName: user.displayName,
@@ -17,10 +18,14 @@ export default function TaskComments() {
       createdAt: timestamp.fromDate(new Date()),
       id: Math.random()
     }
-    console.log(commentToAdd)
+    
+    await updateDocument(task.id, {
+      comments: [...task.comments, commentToAdd],
+    })
+    if (!response.error) {
+      setNewComment('')
+    }
   }
-
-
 
   return (
     <div className="task-comments">
@@ -29,8 +34,7 @@ export default function TaskComments() {
       <form className="add-comment" onSubmit={handleSubmit}>
         <label>
           <span>Add new comment:</span>
-          <textarea
-            required
+          <textarea 
             onChange={(e) => setNewComment(e.target.value)}
             value={newComment}
           ></textarea>
