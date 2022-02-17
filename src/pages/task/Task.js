@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { useDocument } from '../../hooks/useDocument'
 import './Task.css'
+import TaskSummary from './TaskSummary'
 
 export default function Task() {
   const { id } = useParams()
@@ -15,7 +16,7 @@ export default function Task() {
 
   return (
     <div className='task-details'>
-      <h1>{document.name}</h1>
+      <TaskSummary task={document} />
     </div>
   )
 }
