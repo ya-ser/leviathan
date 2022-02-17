@@ -1,6 +1,6 @@
 
 
-const filterList = ['all', 'mine', 'development', 'design']
+const filterList = ['all', 'assigned', 'development', 'design']
 
 export default function TaskFilter({ currentFilter, changeFilter }) {
   
