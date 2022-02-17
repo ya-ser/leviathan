@@ -19,7 +19,7 @@ export default function Dashboard() {
     switch(currentFilter) {
       case 'all':
         return true
-      case 'mine':
+      case 'assigned':
         let assignedToMe = false
         document.assignedUsersList.forEach((u) => {
           if(user.uid === u.id) {
