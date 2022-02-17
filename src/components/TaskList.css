@@ -28,6 +28,11 @@
   color: var(--text-color);
   font-size: 0.9em;
 }
+
+.task-list .created-by {
+  font-size: .8em;
+}
+
 .task-list .assigned-to {
   margin-top: 20px;
   padding-top: 10px;
