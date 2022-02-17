@@ -1,13 +1,13 @@
-import { useState } from "react"
+
 
 const filterList = ['all', 'mine', 'development', 'design']
 
-export default function TaskFilter() {
-  const [currentFilter, setCurrentFilter] = useState('all')
+export default function TaskFilter({ currentFilter, changeFilter }) {
+  
 
   const handleClick = (newFilter) => {
-    console.log(newFilter)
-    setCurrentFilter(newFilter)
+    changeFilter(newFilter)
+    
   }
 
   return (
