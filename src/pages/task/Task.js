@@ -18,7 +18,7 @@ export default function Task() {
   return (
     <div className='task-details'>
       <TaskSummary task={document} />
-      <TaskComments />
+      <TaskComments task={document} />
     </div>
   )
 }
