@@ -36,3 +36,13 @@
 .task-summary + .btn {
   margin-top: 20px;
 }
+
+/* task comments*/
+.task-comments label {
+  margin-bottom: 0px;
+}
+
+.task-comments textarea {
+  min-height: 40px;
+  font-size: 1.5em;
+}
