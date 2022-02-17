@@ -10,7 +10,8 @@ export default function TaskList({ tasks }) {
       {tasks.map(task => (
         <Link to={`/tasks/${task.id}`} key={task.id}>
           <h4>{task.name}</h4>
-          <p>Due by {task.dueDate.toDate().toDateString()}</p>
+          <p className='created-by'>Created by {task.createdBy.displayName}</p>
+          <p className='created-by'>Due by {task.dueDate.toDate().toDateString()}</p>
           <div className='assigned-to'>
             <ul>
               {task.assignedUsersList.map(user => (

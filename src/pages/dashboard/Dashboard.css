@@ -10,6 +10,7 @@
 .task-filter p {
   font-size: 0.9em;
   margin-right: 10px;
+  color: var(--text-color);
 }
 .task-filter button {
   background: transparent;

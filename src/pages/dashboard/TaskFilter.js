@@ -12,8 +12,8 @@ export default function TaskFilter({ currentFilter, changeFilter }) {
 
   return (
     <div className="task-filter">
-    <p>Filter by:</p>
       <nav>
+      <p>Filter by:</p>
         {filterList.map((f) => (
           <button key={f}
             onClick={() => handleClick(f)}
