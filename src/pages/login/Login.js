@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useLogin } from '../../hooks/useLogin'
 import './Login.css'
+import snake from '../../assets/snake.svg'
 
 export default function Login() {
   const [email, setEmail] = useState('')
@@ -37,7 +38,7 @@ export default function Login() {
         />
       </label>
       {!isPending && <button className="btn">Login</button>}
-      {isPending && <button className="btn" disabled>loading</button>}
+      {isPending && <img src={snake} className="snake" alt='snake' />}
       {error && <div className="error">{error}</div>}
     </form>
   )

@@ -3,6 +3,7 @@ import { useSignup } from '../../hooks/useSignup'
 
 // styles
 import './Signup.css'
+import snake from '../../assets/snake.svg'
 
 export default function Signup() {
   const [email, setEmail] = useState('')
@@ -83,7 +84,7 @@ export default function Signup() {
         {thumbnailError && <div className="error">{thumbnailError}</div>}
       </label>
       {!isPending && <button className="btn">Sign up</button>}
-      {isPending && <button className="btn" disabled>loading</button>}
+      {isPending && <img src={snake} className="snake" alt='snake' />}
       {error && <div className="error">{error}</div>}
     </form>
   )
