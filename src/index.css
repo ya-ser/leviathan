@@ -59,7 +59,7 @@ input, textarea {
   color: #777;
   width: 100%;
   box-sizing: border-box;
-  border: 0px solid #ddd;
+  border: 1px solid #ddd;
   border-radius: 10px;
 }
 textarea {
