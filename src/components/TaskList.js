@@ -12,6 +12,9 @@ export default function TaskList({ tasks }) {
           <h4>{task.name}</h4>
           <p className='created-by'>Created by {task.createdBy.displayName}</p>
           <p className='created-by'>Due by {task.dueDate.toDate().toDateString()}</p>
+          {task.completedDate && 
+          <p className='completed'>Completed {task.completedDate.toDate().toDateString()}
+          </p>}
           <div className='assigned-to'>
             <ul>
               {task.assignedUsersList.map(user => (

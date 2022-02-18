@@ -2,24 +2,46 @@ import Avatar from '../../components/Avatar'
 import { useFirestore } from '../../hooks/useFirestore'
 import { useAuthContext } from '../../hooks/useAuthContext'
 import { useHistory } from 'react-router-dom'
+import { timestamp } from '../../firebase/config'
 
 export default function TaskSummary({ task }) {
   const { deleteDocument } = useFirestore('tasks')
+  const { updateDocument, response } = useFirestore('tasks')
   const { user } = useAuthContext()
   const history = useHistory()
 
   const handleClick = (e) => {
     deleteDocument(task.id)
     history.push('/')
+    console.log(task)
   }
+
+  const handleClickTwo = async (e) => {
+    e.preventDefault();
+
+    await updateDocument(task.id, {
+      completedDate: timestamp.now(new Date())
+    })
+    if (!response.error) {
+      history.push('/')
+      console.log(task)
+    }
+    //timestamp the completed time
+    //add to task obj in firestore database
+    //change appearance
+  }
+
   return (
     <div>
       <div className="task-summary" >
-        <h2 className="page-title">{task.name}</h2>
+        <h1 className="page-title">{task.name}</h1>
         <p>By {task.createdBy.displayName}</p>
         <p className="'due-date">
           Task due by {task.dueDate.toDate().toDateString()}
         </p>
+        {task.completedDate && <p className="'due-date">
+          Completed {task.completedDate.toDate().toDateString()}
+        </p>}
         <p className="details">
           {task.details}
         </p>
@@ -32,12 +54,14 @@ export default function TaskSummary({ task }) {
         ))}
         </div>
       </div>
+      
         {user.uid === task.createdBy.id && (
-          <button className='btn' onClick={handleClick}>Mark as Complete</button>
+          <button className='btn' onClick={handleClick}>Delete</button>
         )}
-        {/* {user.uid === task.assignedUsersList.id && (
-          <button className='btn' onClick={handleClick}>Mark as Complete</button>
-        )} */}
+        {!task.completedDate && task.assignedUsersList.map(u => u.id === user.uid) && (
+          <button className='btn' onClick={handleClickTwo}>Mark as Complete</button>
+        )}
+      
     </div>
   )
 }
