@@ -31,6 +31,15 @@ export default function TaskSummary({ task }) {
     //change appearance
   }
 
+  const isAssigned = (tasks, userid) => {
+    for(let task of tasks) {
+      if (task.id === userid) {
+        return true
+      }
+    }
+    return false
+  }
+
   return (
     <div>
       <div className="task-summary" >
@@ -58,7 +67,7 @@ export default function TaskSummary({ task }) {
         {user.uid === task.createdBy.id && (
           <button className='btn' onClick={handleClick}>Delete</button>
         )}
-        {!task.completedDate && task.assignedUsersList.map(u => u.id === user.uid) && (
+        {!task.completedDate && isAssigned(task.assignedUsersList, user.uid) && (
           <button className='btn' onClick={handleClickTwo}>Mark as Complete</button>
         )}
       
