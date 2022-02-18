@@ -8,18 +8,25 @@
   /* background: url("./assets/ocean.jpg"); */
 }
 
-/* @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+/* .snake img {
+  width: 65px;
 } */
 
-/* @keyframes App-logo-spin {
+@media (prefers-reduced-motion: no-preference) {
+  .snake {
+    animation: snake-spin infinite 1s linear;
+    width: 65px;
+    
+  }
+}
+
+@keyframes snake-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-} */
+}
 

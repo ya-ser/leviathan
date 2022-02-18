@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { useLogout } from '../hooks/useLogout'
 import { useAuthContext } from '../hooks/useAuthContext'
 import React from 'react'
-
+import snake from '../assets/snake.svg'
 
 
 export default function Navbar() {
@@ -31,7 +31,7 @@ export default function Navbar() {
 
           <li>
             {!isPending && <button className="btn" onClick={logout}>Logout</button>}
-            {isPending && <button className="btn" disabled>Logging out...</button>}
+            {isPending && <img src={snake} className="snake" alt='snake' />}
           </li>
 
         )}
