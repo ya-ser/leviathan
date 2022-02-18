@@ -33,6 +33,11 @@
   font-size: .8em;
 }
 
+.task-list .completed {
+  font-size: .8em;
+  color: red;
+}
+
 .task-list .assigned-to {
   margin-top: 20px;
   padding-top: 10px;

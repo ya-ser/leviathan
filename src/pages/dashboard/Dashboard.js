@@ -18,8 +18,14 @@ export default function Dashboard() {
   const tasks = documents ? documents.filter((document) => {
     switch(currentFilter) {
       case 'all':
+        if (document.completedDate) {
+          return false
+        }
         return true
       case 'assigned':
+        if (document.completedDate) {
+          return false
+        }
         let assignedToMe = false
         document.assignedUsersList.forEach((u) => {
           if(user.uid === u.id) {
@@ -27,9 +33,18 @@ export default function Dashboard() {
           }
         })
         return assignedToMe
+      case 'completed':
+        let hasBeenCompleted = false
+        if (document.completedDate !== null) {
+          hasBeenCompleted = true
+        }
+        return hasBeenCompleted
       case 'development':
       case 'design':
-        console.log(document.category, currentFilter)
+        if (document.completedDate) {
+          return false
+        }
+        //console.log(document.category, currentFilter)
         return document.category === currentFilter
       default:
         return true
@@ -44,6 +59,7 @@ export default function Dashboard() {
         <TaskFilter currentFilter={currentFilter} changeFilter={changeFilter}/>
       )}
       {tasks && <TaskList tasks={tasks} />}
+      {console.log(tasks)}
     </div>
   )
 }
