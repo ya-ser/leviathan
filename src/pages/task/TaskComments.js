@@ -33,8 +33,19 @@ export default function TaskComments({ task }) {
     <div className="task-comments">
       <h4>Task Comments</h4>
 
+      <form className="add-comment" onSubmit={handleSubmit}>
+        <label>
+          <span>Add new comment:</span>
+          <textarea 
+            onChange={(e) => setNewComment(e.target.value)}
+            value={newComment}
+          ></textarea>
+        </label>
+        <button className="btn">Add Comment</button>
+      </form>
+
       <ul>
-        {task.comments.length > 0 && task.comments.map(comment => (
+        {task.comments.length > 0 && task.comments.slice(0).reverse().map(comment => (
           <li key={comment.id} >
             <div className="comment-author">
               <Avatar src={comment.photoURL} />
@@ -49,17 +60,6 @@ export default function TaskComments({ task }) {
           </li>
         ))}
       </ul>
-
-      <form className="add-comment" onSubmit={handleSubmit}>
-        <label>
-          <span>Add new comment:</span>
-          <textarea 
-            onChange={(e) => setNewComment(e.target.value)}
-            value={newComment}
-          ></textarea>
-        </label>
-        <button className="btn">Add Comment</button>
-      </form>
     </div>
   )
 }

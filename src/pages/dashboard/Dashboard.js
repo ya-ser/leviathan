@@ -9,7 +9,7 @@ import { useAuthContext } from '../../hooks/useAuthContext'
 export default function Dashboard() {
   const { user } = useAuthContext()
   const { documents, error } = useCollection('tasks')
-  const [currentFilter, setCurrentFilter] = useState('all')
+  const [currentFilter, setCurrentFilter] = useState('active')
 
   const changeFilter = (newFilter) => {
     setCurrentFilter(newFilter)
@@ -17,7 +17,7 @@ export default function Dashboard() {
 
   const tasks = documents ? documents.filter((document) => {
     switch(currentFilter) {
-      case 'all':
+      case 'active':
         if (document.completedDate) {
           return false
         }

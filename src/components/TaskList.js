@@ -4,6 +4,10 @@ import Avatar from './Avatar'
 import './TaskList.css'
 
 export default function TaskList({ tasks }) {
+
+  tasks.sort((a, b) => a.dueDate - b.dueDate)
+  tasks.sort((a) => a.assignedUsersList.length !== 0 ? 1 : -1)
+
   return (
     <div className='task-list'>
       {tasks.length === 0 && <p>No tasks yet!</p>}
