@@ -26,9 +26,28 @@ export default function TaskSummary({ task }) {
       history.push('/')
       console.log(task)
     }
-    //timestamp the completed time
-    //add to task obj in firestore database
-    //change appearance
+  }
+
+  // onClick for 'add' input to assign task to self
+  // task is updated to show new user added
+  // only users not assigned to add themselves
+
+  const handleClickAdd = async (e) => {
+    e.preventDefault()
+
+    const assignSelf = {
+      displayName: user.displayName,
+      photoURL: user.photoURL,
+      id: user.uid
+    }
+
+    await updateDocument(task.id, {
+      assignedUsersList: [...task.assignedUsersList, assignSelf],
+    })
+    if (!response.error) {
+      history.push('/') //redirect user to dashboard if no error
+    }
+    console.log('assignSelf: ', assignSelf);
   }
 
   const isAssigned = (tasks, userid) => {
@@ -61,6 +80,8 @@ export default function TaskSummary({ task }) {
               <Avatar src={user.photoURL} />
             </div>
         ))}
+        {!task.completedDate && !isAssigned(task.assignedUsersList, user.uid) && (<button className='add' onClick={handleClickAdd}>+</button>
+        )}
         </div>
       </div>
       

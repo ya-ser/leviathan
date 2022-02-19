@@ -46,10 +46,10 @@ export default function Create() {
       setFormError('Please select a task category')
       return
     }
-    if (assignedUsers.length < 1) {
-      setFormError('Please assign the task to at least 1 user')
-      return
-    }
+    // if (assignedUsers.length < 1) {
+    //   setFormError('Please assign the task to at least 1 user')
+    //   return
+    // }
 
     const createdBy ={
       displayName: user.displayName,
