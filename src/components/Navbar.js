@@ -27,14 +27,14 @@ export default function Navbar() {
           </>
         )}
 
-        {user && (
+        {/* {user && (
 
           <li>
             {!isPending && <button className="btn" onClick={logout}>Logout</button>}
             {isPending && <img src={snake} className="snake" alt='snake' />}
           </li>
 
-        )}
+        )} */}
 
       </ul>
     </div>

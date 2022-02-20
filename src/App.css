@@ -2,12 +2,17 @@
   display: flex;
 }
 
-.App .container{
+.App .nav {
   flex-grow: 1;
-  padding: 0 60px;
-  /* background: url("./assets/ocean.jpg"); */
+  background-color: #3F3E68;
 }
 
+.App .container{
+  flex-grow: 1;
+  height: 100%;
+  /* padding: 0 60px; */
+  /* background: url("./assets/ocean.jpg"); */
+}
 
 /* .snake img {
   width: 65px;

@@ -4,8 +4,12 @@ import DashboardIcon from '../assets/dashboard_icon.svg'
 import AddIcon from '../assets/add_icon.svg'
 import Avatar from './Avatar'
 import {useAuthContext} from '../hooks/useAuthContext'
+import { useLogout } from '../hooks/useLogout'
+import snake from '../assets/snake.svg'
+import signout from '../assets/signout.svg'
 
 export default function Sidebar() {
+const { logout, isPending } = useLogout()
 const {user} = useAuthContext()
 
   return (
@@ -28,6 +32,16 @@ const {user} = useAuthContext()
                 <img src={AddIcon} alt="add project icon" />
                 <span>New Task</span>
               </NavLink>
+            </li>
+            <li>
+            {user && (
+
+                <li>
+                  {!isPending && <button className="btn" onClick={logout}>Logout</button>}
+                  {isPending && <img src={snake} className="snake" alt='snake' />}
+                </li>
+
+            )}
             </li>
           </ul>
         </nav>

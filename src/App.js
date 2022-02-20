@@ -22,6 +22,7 @@ function App() {
       {authIsReady && (
         <BrowserRouter>
           {user && <Sidebar />}
+          <div className='nav'>
           <div className="container">
             <Navbar />
             <Switch>
@@ -46,6 +47,7 @@ function App() {
                 {user && <Redirect to="/" />}
               </Route>
             </Switch>
+          </div>
           </div>
           {user && <OnlineUsers />}
         </BrowserRouter>
