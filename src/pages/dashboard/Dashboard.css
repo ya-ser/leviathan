@@ -36,5 +36,5 @@
   border: 0;
 }
 .task-filter button.active {
-  color: var(--primary-color);
+  color: var(--highlight-color);
 } 

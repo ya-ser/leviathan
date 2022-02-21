@@ -33,15 +33,18 @@ const {user} = useAuthContext()
                 <span>New Task</span>
               </NavLink>
             </li>
-            <li>
-            {user && (
+            <li className='logout'>
 
-                <li>
-                  {!isPending && <button className="btn" onClick={logout}>Logout</button>}
-                  {isPending && <img src={snake} className="snake" alt='snake' />}
-                </li>
+                <NavLink exact to="/login">
+                  <img src={signout} alt="signout" />
+                  <span>Sign Out</span>
+                </NavLink>
 
-            )}
+                {/* // <li>
+                //   {!isPending && <button className="btn" onClick={logout}>Logout</button>}
+                //   {isPending && <img src={snake} className="snake" alt='snake' />}
+                // </li> */}
+
             </li>
           </ul>
         </nav>

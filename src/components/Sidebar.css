@@ -36,6 +36,7 @@
 .sidebar .links img {
   margin-right: 10px;
   filter: invert(100%);
+  width: 24px;
 }
 .sidebar .links a.active {
   color: #555;
@@ -44,6 +45,9 @@
 }
 .sidebar .links .active img {
   filter: invert(40%);
+}
+.sidebar .links .logout {
+  padding-top: 460px;
 }
 
 /* .sidebar .links input.logout-btn {
