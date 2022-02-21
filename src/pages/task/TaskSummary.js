@@ -14,7 +14,6 @@ export default function TaskSummary({ task }) {
   const handleClick = (e) => {
     deleteDocument(task.id)
     history.push('/')
-    console.log(task)
   }
 
   const handleClickTwo = async (e) => {
@@ -25,7 +24,18 @@ export default function TaskSummary({ task }) {
     })
     if (!response.error) {
       history.push('/')
-      console.log(task)
+    }
+  }
+
+
+  const handleClickIncomplete = async (e) => {
+    e.preventDefault();
+    
+    await updateDocument(task.id, {
+      completedDate: null
+    })
+    if (!response.error) {
+      history.push('/') //redirect user to dashboard if no error
     }
   }
 
@@ -48,7 +58,6 @@ export default function TaskSummary({ task }) {
     if (!response.error) {
       history.push('/') //redirect user to dashboard if no error
     }
-    console.log('assignSelf: ', assignSelf);
   }
 
   const isAssigned = (tasks, userid) => {
@@ -61,7 +70,7 @@ export default function TaskSummary({ task }) {
   }
 
   return (
-    <div className='dash'>
+    <div>
       <div className="task-summary" >
         <h1 className="page-title">{task.name}</h1>
         <p>By {task.createdBy.displayName}</p>
@@ -91,6 +100,9 @@ export default function TaskSummary({ task }) {
         )}
         {!task.completedDate && isAssigned(task.assignedUsersList, user.uid) && (
           <button className='btn' onClick={handleClickTwo}>Mark as Complete</button>
+        )}
+        {task.completedDate && isAssigned(task.assignedUsersList, user.uid) && (
+          <button className='btn' onClick={handleClickIncomplete}>Mark as Incomplete</button>
         )}
       
     </div>
