@@ -52,8 +52,12 @@
   background: white;
   padding: 0px;
   text-align: center;
+  transition: all .2s ease-in-out;
 }
-
+.task-summary .assigned-users .add:hover {
+  color: rgb(255, 255, 255);
+  background-color: var(--highlight-color);
+}
 /* task comments*/
 .task-comments label {
   margin-bottom: 0px;
