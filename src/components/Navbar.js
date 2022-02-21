@@ -10,22 +10,24 @@ import snake from '../assets/snake.svg'
 
 export default function Navbar() {
 
-  const { logout, isPending } = useLogout()
+  // const { logout, isPending } = useLogout()
   const { user } = useAuthContext()
 
   return (
     <div className='navbar' >
-      <ul>
-        <li className="logo">
-          <img src={logo} alt="leviathan logo" />
-        </li>
+      {/* <ul> */}
+      <div className='logo'>
+        <img src={logo} alt="leviathan logo" />
+      </div>
+        {/* <li className="logo">
+        </li> */}
 
-        {!user && (
+        {/* {!user && (
           <>
             <li><Link to="/login">Login</Link></li>
             <li><Link to="/signup">Signup</Link></li>
           </>
-        )}
+        )} */}
 
         {/* {user && (
 
@@ -36,7 +38,7 @@ export default function Navbar() {
 
         )} */}
 
-      </ul>
+      {/* </ul> */}
     </div>
   )
 }

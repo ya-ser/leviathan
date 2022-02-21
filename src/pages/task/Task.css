@@ -4,6 +4,9 @@
   align-items: start;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-gap: 60px;
+  padding-top: 50px;
+  margin-left: 45px;
+  margin-right: 45px;
 }
 
 /* task summary */

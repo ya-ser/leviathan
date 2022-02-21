@@ -3,6 +3,7 @@ import { useDocument } from '../../hooks/useDocument'
 import './Task.css'
 import TaskComments from './TaskComments'
 import TaskSummary from './TaskSummary'
+import '../dashboard/Dashboard.css'
 
 export default function Task() {
   const { id } = useParams()
@@ -16,9 +17,11 @@ export default function Task() {
   }
 
   return (
-    <div className='task-details'>
-      <TaskSummary task={document} />
-      <TaskComments task={document} />
+    <div className='dash'>
+      <div className='task-details'>
+        <TaskSummary task={document} />
+        <TaskComments task={document} />
+      </div>
     </div>
   )
 }

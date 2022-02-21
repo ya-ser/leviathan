@@ -3,6 +3,7 @@ import { useFirestore } from '../../hooks/useFirestore'
 import { useAuthContext } from '../../hooks/useAuthContext'
 import { useHistory } from 'react-router-dom'
 import { timestamp } from '../../firebase/config'
+import '../dashboard/Dashboard.css'
 
 export default function TaskSummary({ task }) {
   const { deleteDocument } = useFirestore('tasks')
@@ -60,7 +61,7 @@ export default function TaskSummary({ task }) {
   }
 
   return (
-    <div>
+    <div className='dash'>
       <div className="task-summary" >
         <h1 className="page-title">{task.name}</h1>
         <p>By {task.createdBy.displayName}</p>
@@ -77,7 +78,7 @@ export default function TaskSummary({ task }) {
         <div className='assigned-users'>
           {task.assignedUsersList.map(user => (
             <div key={user.id}>
-              <Avatar src={user.photoURL} />
+              <Avatar  src={user.photoURL} />
             </div>
         ))}
         {!task.completedDate && !isAssigned(task.assignedUsersList, user.uid) && (<button className='add' onClick={handleClickAdd}>+</button>
