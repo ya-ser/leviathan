@@ -6,7 +6,7 @@ import Avatar from './Avatar'
 import {useAuthContext} from '../hooks/useAuthContext'
 import { useLogout } from '../hooks/useLogout'
 import snake from '../assets/snake.svg'
-import signout from '../assets/signout.svg'
+//import signout from '../assets/signout.svg'
 
 export default function Sidebar() {
 const { logout, isPending } = useLogout()
