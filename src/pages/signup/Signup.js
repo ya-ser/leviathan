@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useSignup } from '../../hooks/useSignup'
+import { Link } from 'react-router-dom'
 
 // styles
 import './Signup.css'
@@ -86,6 +87,9 @@ export default function Signup() {
       {!isPending && <button className="btn">Sign up</button>}
       {isPending && <img src={snake} className="snake" alt='snake' />}
       {error && <div className="error">{error}</div>}
+      <span className='sign-action'>
+        Have an account?<Link to="/login">Login</Link>
+      </span>
     </form>
   )
 }
