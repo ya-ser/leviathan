@@ -15,6 +15,8 @@ import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
 import OnlineUsers from './components/OnlineUsers'
 
+import ChatBox from './ChatComponent-1'
+
 function App() {
   const { user, authIsReady } = useAuthContext()
 
@@ -57,6 +59,7 @@ function App() {
             </div>
           </div>
           {user && <OnlineUsers />}
+          {user && <ChatBox />}
         </BrowserRouter>
       )}
     </div>
