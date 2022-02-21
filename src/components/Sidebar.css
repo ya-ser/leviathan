@@ -1,6 +1,6 @@
 .sidebar {
-  width: 300px;
-  min-width: 300px;
+  width: 225px;
+  min-width: 225px;
   background: var(--primary-color);
   min-height: 100vh;
   box-sizing: border-box;
@@ -44,4 +44,15 @@
 }
 .sidebar .links .active img {
   filter: invert(40%);
+}
+
+/* .sidebar .links input.logout-btn {
+  background: #ccc url('signout.png') no-repeat top left;
+  padding-left: 16px;
+  height: 16px;
+} */
+
+.sidebar .avatar {
+  width: 100px;
+  height: 100px;
 }

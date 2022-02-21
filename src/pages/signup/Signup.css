@@ -1,8 +1,13 @@
 .auth-form {
-  max-width: 360px;
-  margin: 60px auto;
+  min-width: 300px;
+  min-height: 600px;
   padding: 40px;
   border: 1px solid #ddd;
   box-shadow: 3px 3px 5px rgba(0,0,0,0.05);
   background: #fff;
+  margin-right: 0px;
+  margin-left: 0px;
+  display: flow-root;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }

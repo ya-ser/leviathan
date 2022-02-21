@@ -1,32 +1,36 @@
 .user-list {
-  width: 250px;
-  min-width: 250px;
+  width: 175px;
+  min-width: 175px;
   padding: 30px;
   box-sizing: border-box;
   background: #fbfbfb;
   color: var(--heading-color);
 }
-.user-list h2 {
+.user-list .user-content {
+  position: fixed;
+}
+.user-list .user-content h2 {
   text-align: right;
   margin-bottom: 40px;
   padding-bottom: 10px;
   border-bottom: 1px solid #eee;
   font-size: 1.2em;
 }
-.user-list .user-list-item {
+.user-list .user-content .user-list-item {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   margin: 20px auto;
 }
-.user-list .avatar {
+
+.user-list .user-content .avatar {
   margin-left: 10px;
   width: 40px;
   height: 40px;
 }
 
 /* online users */
-.user-list .online-user {
+.user-list .user-content .online-user {
   display: inline-block;
   margin-right: 10px;
   width: 12px;

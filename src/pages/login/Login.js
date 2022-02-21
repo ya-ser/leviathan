@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useLogin } from '../../hooks/useLogin'
 import './Login.css'
 import snake from '../../assets/snake.svg'
+import { Link } from 'react-router-dom'
 
 export default function Login() {
   const [email, setEmail] = useState('')
@@ -40,6 +41,9 @@ export default function Login() {
       {!isPending && <button className="btn">Login</button>}
       {isPending && <img src={snake} className="snake" alt='snake' />}
       {error && <div className="error">{error}</div>}
+      <span className='sign-action'>
+        Need an account?<Link to="/signup">Sign up</Link>
+      </span>
     </form>
   )
 }

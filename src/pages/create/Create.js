@@ -7,6 +7,7 @@ import { timestamp } from '../../firebase/config'
 import {useAuthContext} from '../../hooks/useAuthContext'
 import { useFirestore } from '../../hooks/useFirestore'
 import { useHistory } from 'react-router-dom'
+import '../dashboard/Dashboard.css'
 
 const categories = [
   { value: 'development', label: 'Development' },
@@ -86,56 +87,57 @@ export default function Create() {
 
 
   return (
-    <div className='create-form'>
-      <h2 className='page-title'>Create a new task</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          <span>Task name:</span>
-          <input
-            required
-            type="text"
-            onChange={(e) => setName(e.target.value)}
-            value={name}
-          />
-        </label>
-        <label>
-          <span>Task details:</span>
-          <textarea
-            required
-            type="text"
-            onChange={(e) => setDetails(e.target.value)}
-            value={details}
-          ></textarea>
-        </label>
-        <label>
-          <span>Set due date:</span>
-          <input
-            required
-            type="date"
-            onChange={(e) => setDueDate(e.target.value)}
-            value={dueDate}
-          />
-        </label>
-        <label>
-          <span>Task category:</span>
-          <Select
-            onChange={(option) => setCategory(option)}
-            options={categories}
-          />
-        </label>
-        <label>
-          <span>Assign to:</span>
-          <Select
-            onChange={(option) => setAssignedUsers(option)}
-            options={users}
-            isMulti
-          />
-        </label>
+    <div className='dash'>
+      <div className='create-form'>
+        <form onSubmit={handleSubmit}>
+          <label>
+            <span>Task name:</span>
+            <input
+              required
+              type="text"
+              onChange={(e) => setName(e.target.value)}
+              value={name}
+            />
+          </label>
+          <label>
+            <span>Task details:</span>
+            <textarea
+              required
+              type="text"
+              onChange={(e) => setDetails(e.target.value)}
+              value={details}
+            ></textarea>
+          </label>
+          <label>
+            <span>Set due date:</span>
+            <input
+              required
+              type="date"
+              onChange={(e) => setDueDate(e.target.value)}
+              value={dueDate}
+            />
+          </label>
+          <label>
+            <span>Task category:</span>
+            <Select
+              onChange={(option) => setCategory(option)}
+              options={categories}
+            />
+          </label>
+          <label>
+            <span>Assign to:</span>
+            <Select
+              onChange={(option) => setAssignedUsers(option)}
+              options={users}
+              isMulti
+            />
+          </label>
 
-        <button className='btn'>Add Task</button>
-        {formError && <p className='error'>{formError}</p>}
-      </form>
+          <button className='btn'>Add Task</button>
+          {formError && <p className='error'>{formError}</p>}
+        </form>
 
+      </div>
     </div>
   )
 }

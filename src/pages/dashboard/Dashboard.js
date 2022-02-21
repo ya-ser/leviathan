@@ -52,14 +52,15 @@ export default function Dashboard() {
   }) : null
 
   return (
-    <div>
-      <h2 className='page-title'>Dashboard</h2>
-      {error && <p className='error'>{error}</p>}
-      {documents && (
-        <TaskFilter currentFilter={currentFilter} changeFilter={changeFilter}/>
-      )}
-      {tasks && <TaskList tasks={tasks} />}
-      {console.log(tasks)}
+    <div className='dash'>
+      <div className='dash-content'>
+        {error && <p className='error'>{error}</p>}
+        {documents && (
+          <TaskFilter currentFilter={currentFilter} changeFilter={changeFilter} />
+        )}
+        {tasks && <TaskList tasks={tasks} />}
+        {console.log(tasks)}
+      </div>
     </div>
   )
 }
