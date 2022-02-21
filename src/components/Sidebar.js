@@ -33,7 +33,7 @@ const {user} = useAuthContext()
                 <span>New Task</span>
               </NavLink>
             </li>
-            <li>
+            <div>
             {user && (
 
                 <li>
@@ -42,7 +42,7 @@ const {user} = useAuthContext()
                 </li>
 
             )}
-            </li>
+            </div>
           </ul>
         </nav>
       </div>
