@@ -1,4 +1,4 @@
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import './Sidebar.css'
 import DashboardIcon from '../assets/dashboard_icon.svg'
 import AddIcon from '../assets/add_icon.svg'
@@ -6,7 +6,7 @@ import Avatar from './Avatar'
 import { useAuthContext } from '../hooks/useAuthContext'
 import { useLogout } from '../hooks/useLogout'
 import snake from '../assets/snake.svg'
-//import signout from '../assets/signout.svg'
+import signout from '../assets/signout.svg'
 
 export default function Sidebar() {
 const { logout, isPending } = useLogout()
