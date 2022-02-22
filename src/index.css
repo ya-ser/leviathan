@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;500;700&display=swap');
 
 /* variables */
 :root {
@@ -11,10 +11,11 @@
 
 /* base styles */
 body {
-  font-family: Poppins, sans-serif;
+  font-family: 'Encode Sans', sans-serif;
   margin: 0;
   font-size: 1.1em;
   background: var(--bg-color);
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
 }
 ul, li, p, h1, h2, h3, h4 {
   margin: 0;

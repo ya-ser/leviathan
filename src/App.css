@@ -5,6 +5,7 @@
 .App .nav {
   flex-grow: 1;
   background-color: var(--primary-color);
+  background-image: url("https://www.transparenttextures.com/patterns/subtle-zebra-3d.png");
 }
 
 .App .nav .container{

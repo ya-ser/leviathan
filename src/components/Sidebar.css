@@ -6,6 +6,7 @@
   box-sizing: border-box;
   position: relative;
   color: #fff;
+  background-image: url("https://www.transparenttextures.com/patterns/subtle-zebra-3d.png");
 }
 .sidebar-content {
   position: fixed;
