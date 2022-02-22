@@ -4,6 +4,7 @@
 
 //import firebase from 'firebase/app';
 //import 'firebase/firestore';
+import './Chat.css'
 
 import { projectFirestore, timestamp } from './firebase/config';
 //import { useFirestore } from './hooks/useFirestore';
@@ -22,7 +23,7 @@ export default function ChatBox() {
   const query = messagesRef.orderBy('createdAt').limit(25);
   //listen to data with a hook
   const [messages] = useCollectionData(query, {idField: 'id'});
-  console.log(messages)
+  //console.log(messages)
   const [formValue, setFormValue] = useState('');
 
 
@@ -63,7 +64,7 @@ export default function ChatBox() {
   // bind state to form input
 
   return (
-    <div className='ChatBox'>
+    <div className='chatbox'>
     <main className='chat-messages'>
 
       {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
@@ -73,7 +74,7 @@ export default function ChatBox() {
     <form className='add-message' onSubmit={sendMessage}>
       
       <input value={formValue} onChange={(e) => setFormValue(e.target.value)} />
-      <button type="submit">SEND</button>
+      <button type="submit">Send</button>
     </form>
     </div>
   )

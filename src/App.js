@@ -15,7 +15,7 @@ import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
 import OnlineUsers from './components/OnlineUsers'
 
-import ChatBox from './ChatComponent-1'
+import ChatBox from './ChatComponent-1.js'
 
 function App() {
   const { user, authIsReady } = useAuthContext()

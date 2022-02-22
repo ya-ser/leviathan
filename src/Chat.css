@@ -2,13 +2,13 @@
   background-color: #282c34;
 } */
 
-.chat {
+.chatbox {
   text-align: center;
-  max-width: 728px;
-  margin: 0 auto;
+  max-width: 80%;
+  margin: 10px auto;
 }
 
-.chat header {
+.chatbox header {
   background-color: #181717;
   height: 10vh;
   min-height: 50px;
@@ -16,7 +16,7 @@
   position: fixed;
   width: 100%;
   max-width: 728px;
-  top: 0;
+  top: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -25,7 +25,7 @@
   box-sizing: border-box;
 }
 
-.chat section {
+.chatbox section {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,29 +33,46 @@
   background-color: rgb(40, 37, 53);
 }
 
-main .chat-messages {
+.chatbox .chat-messages {
   padding: 10px;
-  height: 80vh;
-  margin: 10vh 0 10vh;
+  height: 35vh;
+  width: 363px;
+  margin: 100vh 0 70px;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
+  position: fixed;
+  bottom: 0;
+  right: 20px;
+  align-content: stretch;
+  border-radius: 2vw;
+  background-color: #4b3e8157;
 }
 
-main .chat-messages::-webkit-scrollbar {
+.chatbox .chat-messages::-webkit-scrollbar {
   width: 0.25rem;
 }
 
-main .chat-messages::-webkit-scrollbar-track {
-  background: #1e1e24;
+.chatbox .chat-messages::-webkit-scrollbar-track {
+  background: hsla(268, 41%, 68%, 0.966);
+  border-radius: 2vw;
 }
 
-main .chat-messages::-webkit-scrollbar-thumb {
+.chatbox .chat-messages::-webkit-scrollbar-thumb {
   background: #6649b8;
 }
 
-.add-message form {
-  height: 10vh;
+.chatbox .add-message {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: inline-flex;
+  padding-block-end: 10px;
+  padding-right: 13px;
+}
+
+.chatbox .add-message form {
+  height: 66px;
   position: fixed;
   bottom: 0;
   background-color: rgb(24, 23, 23);
@@ -63,28 +80,33 @@ main .chat-messages::-webkit-scrollbar-thumb {
   max-width: 728px;
   display: flex;
   font-size: 1.5rem;
+  padding: 15px 32px;
 }
 
-.add-message form button {
-  width: 20%;
-  background-color: rgb(56, 56, 143);
+.chatbox .add-message button {
+  width: 30%;
+  border-radius: 1vw;
+  background-color: rgba(16, 15, 63, 0.164);
+  
 }
 
 
-.add-message input {
+.chatbox .add-message input {
   line-height: 1.5;
   width: 100%;
   font-size: 1.5rem;
-  background: rgb(58, 58, 58);
+  background: rgba(100, 80, 116, 0.699);
   color: white;
   outline: none;
   border: none;
-  padding: 0 10px;
+  border-radius: 40px;
+  padding: 10px 10px;
 }
 
-.add-message button {
-  background-color: #282c34; /* Green */
+.chatbox .add-message button {
+  background-color: #4e336d; /* Green */
   border: none;
+  border-radius: 40px;
   color: white;
   padding: 15px 32px;
   text-align: center;
@@ -94,7 +116,7 @@ main .chat-messages::-webkit-scrollbar-thumb {
   font-size: 1.25rem;
 }
 
-.add-message button:disabled {
+.chatbox .add-message button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
@@ -110,12 +132,12 @@ main .chat-messages::-webkit-scrollbar-thumb {
 
 
 
-.ChatBox ul, li {
+.chatbox ul, li {
   text-align: left;
   list-style: none;
 }
 
-.ChatBox p {
+.chatbox p {
   max-width: 500px;
   margin-bottom: 12px;
   line-height: 24px;
@@ -126,26 +148,26 @@ main .chat-messages::-webkit-scrollbar-thumb {
   text-align: center;
 }
 
-.message {
+.chatbox .message {
   display: flex;
   align-items: center;
 }
 
-.sent {
+.chatbox .sent {
   flex-direction: row-reverse;
 }
 
-.sent p {
+.chatbox .sent p {
   color: white;
   background: #0b93f6;
   align-self: flex-end;
 }
-.received p {
-  background: #e5e5ea;
+.chatbox .received p {
+  background: #fffffffb;
   color: black;
 }
 
-.message img {
+.chatbox .message img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
