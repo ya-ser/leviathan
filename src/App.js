@@ -15,8 +15,22 @@ import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
 import OnlineUsers from './components/OnlineUsers'
 
+import ChatBox from './ChatComponent-1.js'
+import { useState } from 'react'
+
 function App() {
   const { user, authIsReady } = useAuthContext()
+  const [myChat, setMyChat] = useState(false)
+
+  //let showChat = true;
+  function hideChat() {
+    if (myChat === false) {
+      setMyChat(true)
+    }
+    if(myChat === true) {
+      setMyChat(false)
+    }
+  }
 
   return (
     <div className="App">
@@ -57,6 +71,18 @@ function App() {
             </div>
           </div>
           {user && <OnlineUsers />}
+          {user && myChat && <ChatBox />}
+          {user && <button className='show-chat' onClick={hideChat}>+++</button>}
+          {/* {(user && showChat) ? <ChatBox /> : null} */}
+          {/* {user && <button className='show-chat' onClick={() => {
+            if (showChat === false) {
+              console.log(showChat)
+              showChat = true;
+            }
+            if (showChat === true) {
+              showChat = false;
+            }
+          }}>+</button>} */}
         </BrowserRouter>
       )}
     </div>

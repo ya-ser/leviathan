@@ -50,3 +50,8 @@
   }
 }
 
+.show-chat button {
+  position: fixed;
+  bottom: 20vw;
+  right: 0;
+}
