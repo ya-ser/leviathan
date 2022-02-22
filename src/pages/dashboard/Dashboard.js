@@ -59,7 +59,7 @@ export default function Dashboard() {
           <TaskFilter currentFilter={currentFilter} changeFilter={changeFilter} />
         )}
         {tasks && <TaskList tasks={tasks} />}
-        {console.log(tasks)}
+        
       </div>
     </div>
   )
