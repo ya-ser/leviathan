@@ -60,6 +60,23 @@ export default function TaskSummary({ task }) {
     }
   }
 
+  // const handleClickRemove = async (e) => {
+  //   e.preventDefault()
+
+  //   const assignSelf = {
+  //     displayName: user.displayName,
+  //     photoURL: user.photoURL,
+  //     id: user.uid
+  //   }
+
+  //   await deleteDocument(task.id, {
+  //     assignedUsersList: [...task.assignedUsersList, assignSelf],
+  //   })
+  //   if (!response.error) {
+  //     history.push('/') //redirect user to dashboard if no error
+  //   }
+  // }
+
   const isAssigned = (tasks, userid) => {
     for(let task of tasks) {
       if (task.id === userid) {
@@ -92,6 +109,8 @@ export default function TaskSummary({ task }) {
         ))}
         {!task.completedDate && !isAssigned(task.assignedUsersList, user.uid) && (<button className='add' onClick={handleClickAdd}>+</button>
         )}
+        {/* {!task.completedDate && isAssigned(task.assignedUsersList, user.uid) && (<button className='add' onClick={handleClickRemove}>-</button>
+        )} */}
         </div>
       </div>
       

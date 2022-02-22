@@ -20,30 +20,32 @@ export default function Login() {
   return (
     <form onSubmit={handleSubmit} className="auth-form">
       <h2>Login</h2>
-      <label>
-        <span>email:</span>
-        <input
-          required 
-          type="email" 
-          onChange={(e) => setEmail(e.target.value)} 
-          value={email}
-        />
-      </label>
-      <label>
-        <span>password:</span>
-        <input
-          required
-          type="password" 
-          onChange={(e) => setPassword(e.target.value)} 
-          value={password}
-        />
-      </label>
+      <div className='field'>
+        <label>
+          <input className='login-fields'
+            required
+            type="email"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+            placeholder="Enter email"
+          />
+        </label>
+        <label>
+          <input className='login-fields'
+            required
+            type="password"
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+            placeholder="Enter password"
+          />
+        </label>
+      </div>
       {!isPending && <button className="btn">Login</button>}
       {isPending && <img src={snake} className="snake" alt='snake' />}
       {error && <div className="error">{error}</div>}
-      <span className='sign-action'>
-        Need an account?<Link to="/signup">Sign up</Link>
-      </span>
+      <label className='signup-action'>
+        Don't have an account yet? <Link to="/signup">Sign up</Link>
+      </label>
     </form>
   )
 }

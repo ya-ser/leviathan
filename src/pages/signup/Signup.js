@@ -47,49 +47,51 @@ export default function Signup() {
 
   return (
     <form onSubmit={handleSubmit} className="auth-form">
-      <h2>sign up</h2>
-      <label>
-        <span>email:</span>
-        <input
-          required 
-          type="email" 
-          onChange={(e) => setEmail(e.target.value)} 
-          value={email}
-        />
-      </label>
-      <label>
-        <span>password:</span>
-        <input
-          required
-          type="password" 
-          onChange={(e) => setPassword(e.target.value)} 
-          value={password}
-        />
-      </label>
-      <label>
-        <span>display name:</span>
-        <input
-          required
-          type="text" 
-          onChange={(e) => setDisplayName(e.target.value)} 
-          value={displayName}
-        />
-      </label>
-      <label>
-        <span>Profile thumbnail:</span>
-        <input 
-          required
-          type="file"
-          onChange={handleFileChange}
-        />
-        {thumbnailError && <div className="error">{thumbnailError}</div>}
-      </label>
+      <h2>Register</h2>
+      <div className='field'>
+        <label>
+          <input className='login-fields'
+            required
+            type="email"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+            placeholder="Enter email"
+          />
+        </label>
+        <label>
+          <input className='login-fields'
+            required
+            type="password"
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+            placeholder="Enter password"
+          />
+        </label>
+        <label>
+          <input className='login-fields'
+            required
+            type="text"
+            onChange={(e) => setDisplayName(e.target.value)}
+            value={displayName}
+            placeholder="Username"
+          />
+        </label>
+        <label>
+          <span>Profile thumbnail:</span>
+          <input
+            required
+            type="file"
+            onChange={handleFileChange}
+          />
+          {thumbnailError && <div className="error">{thumbnailError}</div>}
+        </label>
+      </div>
       {!isPending && <button className="btn">Sign up</button>}
       {isPending && <img src={snake} className="snake" alt='snake' />}
       {error && <div className="error">{error}</div>}
-      <span className='sign-action'>
-        Have an account?<Link to="/login">Login</Link>
-      </span>
+      <label className='signup-action'>
+        Have an account? <Link to="/login">Log in</Link>
+      </label>
     </form>
   )
 }

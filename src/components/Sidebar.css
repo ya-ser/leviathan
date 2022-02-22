@@ -6,6 +6,7 @@
   box-sizing: border-box;
   position: relative;
   color: #fff;
+  background-image: url("https://www.transparenttextures.com/patterns/subtle-zebra-3d.png");
 }
 .sidebar-content {
   position: fixed;
@@ -36,6 +37,7 @@
 .sidebar .links img {
   margin-right: 10px;
   filter: invert(100%);
+  width: 24px;
 }
 .sidebar .links a.active {
   color: #555;
@@ -44,6 +46,9 @@
 }
 .sidebar .links .active img {
   filter: invert(40%);
+}
+.sidebar .links .logout {
+  padding-top: 460px;
 }
 
 /* .sidebar .links input.logout-btn {

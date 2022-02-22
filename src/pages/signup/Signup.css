@@ -11,3 +11,9 @@
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
+
+.auth-form .login-fields {
+  width: 333px;
+  height: 60px;
+  font-size: 100%;
+}
