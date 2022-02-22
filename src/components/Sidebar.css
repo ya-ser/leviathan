@@ -1,6 +1,6 @@
 .sidebar {
-  width: 225px;
-  min-width: 225px;
+  width: 200px;
+  min-width: 200px;
   background: var(--primary-color);
   min-height: 100vh;
   box-sizing: border-box;
@@ -48,7 +48,9 @@
   filter: invert(40%);
 }
 .sidebar .links .logout {
-  padding-top: 500px;
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 50px;
 }
 
 /* .sidebar .links input.logout-btn {

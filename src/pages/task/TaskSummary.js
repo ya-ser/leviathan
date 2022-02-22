@@ -56,7 +56,7 @@ export default function TaskSummary({ task }) {
       assignedUsersList: [...task.assignedUsersList, assignSelf],
     })
     if (!response.error) {
-      history.push('/') //redirect user to dashboard if no error
+      history.push(`/tasks/${task.id}`) //redirect user to dashboard if no error
     }
   }
 
