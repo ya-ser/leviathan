@@ -52,6 +52,7 @@
 
 .chatbox .chat-messages::-webkit-scrollbar {
   width: 0.25rem;
+  border-radius: 2vw;
 }
 
 .chatbox .chat-messages::-webkit-scrollbar-track {
