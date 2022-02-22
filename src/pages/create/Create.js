@@ -102,7 +102,6 @@ export default function Create() {
           <label>
             <span>Task details:</span>
             <textarea
-              required
               type="text"
               onChange={(e) => setDetails(e.target.value)}
               value={details}
