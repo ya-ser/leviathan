@@ -15,7 +15,6 @@ body {
   margin: 0;
   font-size: 1.1em;
   background: var(--bg-color);
-  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
 }
 ul, li, p, h1, h2, h3, h4 {
   margin: 0;
@@ -39,6 +38,7 @@ ul {
   cursor: pointer;
   font-size: 1em;
   border: 1px solid var(--primary-color);
+  transition: all .2s ease-in-out;
 }
 .btn:hover {
   color: #fff;
@@ -48,7 +48,7 @@ ul {
 /* forms */
 label {
   display: block;
-  margin: 24px auto;
+  margin: 30px auto;
 }
 label span {
   display: block;

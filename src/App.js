@@ -1,9 +1,10 @@
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import { useAuthContext } from './hooks/useAuthContext'
-import leviathan from './assets/leviathan.jpeg'
-import arrow from './assets/arrow.svg'
+import { useState } from 'react'
+
 // styles
 import './App.css'
+import leviathan from './assets/leviathan.jpeg'
 
 // pages & components
 import Dashboard from './pages/dashboard/Dashboard'
@@ -16,7 +17,7 @@ import Sidebar from './components/Sidebar'
 import OnlineUsers from './components/OnlineUsers'
 
 import ChatBox from './Chat.js'
-import { useState } from 'react'
+
 
 function App() {
   const { user, authIsReady } = useAuthContext()

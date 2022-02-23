@@ -19,7 +19,7 @@ export default function Login() {
 
   return (
     <form onSubmit={handleSubmit} className="auth-form">
-      <h2>Login</h2>
+      <h1 className='title-form'>Login</h1>
       <div className='field'>
         <label>
           <input className='login-fields'
@@ -40,7 +40,7 @@ export default function Login() {
           />
         </label>
       </div>
-      {!isPending && <button className="btn">Login</button>}
+      {!isPending && <button className="reg-btn">Login</button>}
       {isPending && <img src={snake} className="snake" alt='snake' />}
       {error && <div className="error">{error}</div>}
       <label className='signup-action'>

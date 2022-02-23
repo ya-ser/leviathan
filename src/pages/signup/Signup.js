@@ -47,7 +47,7 @@ export default function Signup() {
 
   return (
     <form onSubmit={handleSubmit} className="auth-form">
-      <h2>Register</h2>
+      <h1 className='title-form'>Register</h1>
       <div className='field'>
         <label>
           <input className='login-fields'
@@ -86,7 +86,7 @@ export default function Signup() {
           {thumbnailError && <div className="error">{thumbnailError}</div>}
         </label>
       </div>
-      {!isPending && <button className="btn">Sign up</button>}
+      {!isPending && <button className="reg-btn">Sign up</button>}
       {isPending && <img src={snake} className="snake" alt='snake' />}
       {error && <div className="error">{error}</div>}
       <label className='signup-action'>
