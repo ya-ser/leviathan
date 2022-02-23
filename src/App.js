@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import { useAuthContext } from './hooks/useAuthContext'
 import leviathan from './assets/leviathan.jpeg'
-
+import arrow from './assets/arrow.svg'
 // styles
 import './App.css'
 
@@ -15,7 +15,7 @@ import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
 import OnlineUsers from './components/OnlineUsers'
 
-import ChatBox from './ChatComponent-1.js'
+import ChatBox from './Chat.js'
 import { useState } from 'react'
 
 function App() {
@@ -72,17 +72,7 @@ function App() {
           </div>
           {user && <OnlineUsers />}
           {user && myChat && <ChatBox />}
-          {user && <button className='show-chat' onClick={hideChat}>+++</button>}
-          {/* {(user && showChat) ? <ChatBox /> : null} */}
-          {/* {user && <button className='show-chat' onClick={() => {
-            if (showChat === false) {
-              console.log(showChat)
-              showChat = true;
-            }
-            if (showChat === true) {
-              showChat = false;
-            }
-          }}>+</button>} */}
+          {user && <button className='show-chat' onClick={hideChat}>◀</button>}
         </BrowserRouter>
       )}
     </div>
