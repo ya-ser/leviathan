@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.40329437.css",
+    "main.js": "/static/js/main.774f16b5.js",
+    "static/js/787.632e43f0.chunk.js": "/static/js/787.632e43f0.chunk.js",
+    "static/media/leviathan.jpeg": "/static/media/leviathan.2877f22eaf0cb1162d38.jpeg",
+    "static/media/logo.svg": "/static/media/logo.6a1afd2fc6e0cbf749dde50abdb4da76.svg",
+    "static/media/signout.svg": "/static/media/signout.9f92372b672dbbb2dd97a90a874dea4d.svg",
+    "static/media/snake.svg": "/static/media/snake.93185a2bab34b0c390ccdec0a7604359.svg",
+    "index.html": "/index.html",
+    "static/media/dashboard_icon.svg": "/static/media/dashboard_icon.bc800f3b9286b71005c3f026ebfaa958.svg",
+    "static/media/add_icon.svg": "/static/media/add_icon.376e9b6a44e5b3142f1239a3cc8504d0.svg",
+    "main.40329437.css.map": "/static/css/main.40329437.css.map",
+    "main.774f16b5.js.map": "/static/js/main.774f16b5.js.map",
+    "787.632e43f0.chunk.js.map": "/static/js/787.632e43f0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.40329437.css",
+    "static/js/main.774f16b5.js"
+  ]
+}
