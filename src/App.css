@@ -34,9 +34,9 @@
 } */
 
 .show-chat {
-  background: #fff;
+  background: #fbfbfb;
   color: var(--primary-color);
-  border: 1px solid var(--primary-color);
+  border: none;
   transition: all .2s ease-in-out;
 }
 .show-chat:hover {
