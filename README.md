@@ -30,7 +30,7 @@ Create New Task
 
 ### Technologies
 
--React
--Context API
--Firebase: User Authentication, Hosting, & Firestore Database
--React Firebase Hooks
+- React
+- Context API
+- Firebase: User Authentication, Hosting, & Firestore Database
+- React Firebase Hooks
