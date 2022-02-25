@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# About
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Leviathan is a responsive full stack project organization tool that provides a solution to student collaboration and group work.
 
-## Available Scripts
+Working in groups and collaborating with your classmates can be tough. From sharing notes, resources, and planning in multiple apps, to juggling the workload, and making sure everyone is on the same page, we thought that there should be a simpler way.
 
-In the project directory, you can run:
+We do this by giving our users a one stop shop that combines the functionality of apps like slack and google docs, with the organizational tools of Trello. By allowing users to contribute where they are strong, and learn and grow on tasks where they are weak with the help of their team, Leviathan gives everyone a birds eye view of the project and a powerful way to manage all those tiny details
 
-### `npm start`
+## Set-Up
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Fork and clone the repository and npm install all dependencies 
+2. Sign up for a firebase account
+3. Start a new project and initialize User Authentication, Hosting (optional), and Storage 
+4. Copy your firebase config object and replace the values into the .env.example file in the Leviathan project directory
+5. Rename the file to .env.local
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Screenshots
 
-### `npm test`
+Leviathan Dashboard to Task Details
+![AddLeviathan Dashboard to Task Details](gifs/add.gif)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Task Details with Comments Section
+![Task Details with Comments Section](gifs/add.gif)
 
-### `npm run build`
+Toggle Floating Chat from Users Online Sidebar
+![Toggle Floating Chat from Users Online Sidebar](gifs/add.gif)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Create New Task
+![Create New Task](gifs/add.gif)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Technologies
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-React
+-Context API
+-Firebase: User Authentication, Hosting, & Firestore Database
+-React Firebase Hooks
