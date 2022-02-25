@@ -26,7 +26,7 @@ Toggle Floating Chat from Users Online Sidebar
 ![Toggle Floating Chat from Users Online Sidebar](https://github.com/ray-flores/leviathan/blob/master/public/chat.gif?raw=true)
 
 Create New Task
-![Create New Task](gifs/add.gif)
+![Create New Task](https://github.com/ray-flores/leviathan/blob/master/public/create.gif?raw=true)
 
 ### Technologies
 
