@@ -17,7 +17,7 @@ We do this by giving our users a one stop shop that combines the functionality o
 ## Screenshots
 
 Leviathan Dashboard to Task Details
-![AddLeviathan Dashboard to Task Details](gifs/add.gif)
+![AddLeviathan Dashboard to Task Details](https://github.com/ray-flores/leviathan/blob/master/public/mark-complete.gif?raw=true)
 
 Task Details with Comments Section
 ![Task Details with Comments Section](https://github.com/ray-flores/leviathan/blob/master/public/comment-assign.gif?raw=true)
