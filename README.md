@@ -23,7 +23,7 @@ Task Details with Comments Section
 ![Task Details with Comments Section](gifs/add.gif)
 
 Toggle Floating Chat from Users Online Sidebar
-![Toggle Floating Chat from Users Online Sidebar](gifs/add.gif)
+![Toggle Floating Chat from Users Online Sidebar](https://github.com/ray-flores/leviathan/blob/master/public/chat.gif?raw=true)
 
 Create New Task
 ![Create New Task](gifs/add.gif)
