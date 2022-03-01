@@ -1,3 +1,9 @@
+# LEVIATHAN
+
+## Live Demo
+
+A live demo of this app is available! Check it out [here!](https://leviathan-833fd.web.app/signup)
+
 # About
 
 Leviathan is a responsive full stack project organization tool that provides a solution to student collaboration and group work.
@@ -5,14 +11,6 @@ Leviathan is a responsive full stack project organization tool that provides a s
 Working in groups and collaborating with your classmates can be tough. From sharing notes, resources, and planning in multiple apps, to juggling the workload, and making sure everyone is on the same page, we thought that there should be a simpler way.
 
 We do this by giving our users a one stop shop that combines the functionality of apps like slack and google docs, with the organizational tools of Trello. By allowing users to contribute where they are strong, and learn and grow on tasks where they are weak with the help of their team, Leviathan gives everyone a birds eye view of the project and a powerful way to manage all those tiny details.
-
-## Set-Up
-
-1. Fork and clone the repository and npm install all dependencies 
-2. Sign up for a firebase account
-3. Start a new project and initialize User Authentication, Hosting (optional), and Storage 
-4. Copy your firebase config object and replace the values into the .env.example file in the Leviathan project directory
-5. Rename the file to .env.local
 
 ## Screenshots
 
